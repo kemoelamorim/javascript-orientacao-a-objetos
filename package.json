@@ -1,0 +1,21 @@
+{
+  "name": "javascript-orientacao-a-objetos",
+  "version": "1.0.0",
+  "description": "Conceitos de orientação a Objetos usando a linguagem JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kemoelamorim/javascript-orientacao-a-objetos.git"
+  },
+  "keywords": [],
+  "author": "Kemoel Amorim Miranda",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/kemoelamorim/javascript-orientacao-a-objetos/issues"
+  },
+  "homepage": "https://github.com/kemoelamorim/javascript-orientacao-a-objetos#readme"
+}
