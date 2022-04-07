@@ -1,33 +1,21 @@
 import { Cliente } from './Cliente.js';
-import { ContaCorrente } from './ContaCorrente.js';
+import { Diretor } from './Funcionarios/Diretor.js';
+import { Gerente } from './Funcionarios/Gerente.js';
+import { SistemaDeAutenticacao } from './SistemaDeAutenticacao.js';
 
-const cliente1 = new Cliente("Ricardo","111.111.111-11");
-const contaCorrenteRicardo = new ContaCorrente(1001);
+const diretor = new Diretor("Kemoel", 10000.00, "999.222.333-99")
+const gerente = new Gerente("Ricardo", 5000.00, "000.000.000-00")
 
-cliente1.conta = contaCorrenteRicardo 
+const cliente = new Cliente("Thamiris", "222.222.222-22", "Music@eeu123")
 
-try {
-  contaCorrenteRicardo.deposita(300);
-  contaCorrenteRicardo.deposita(100);
-  contaCorrenteRicardo.sacar(500);
-} catch (error) {
-  console.log(`${error}`)
-}
-
-try {
-  contaCorrenteRicardo.deposita(-1);
-} catch (error) {
-  console.log(`${error}`)
-}
+diretor.cadastrarSenha(1234)
+gerente.cadastrarSenha(4321)
 
 
-const cliente2 = new Cliente("Kemoel", "000.000.000-00");
-const contaCorrenteKemoel = new ContaCorrente(1002);
+const diretorLogado= SistemaDeAutenticacao.login(diretor, "1234")
+const gerenteLogado = SistemaDeAutenticacao.login(gerente, "4321")
+const clienteLogado = SistemaDeAutenticacao.login(cliente, "Music@eeu123")
 
-cliente2.conta = contaCorrenteKemoel
-
-contaCorrenteRicardo.transferir(contaCorrenteKemoel, 50)
-
-console.log(cliente2.conta)
-console.log(cliente1.conta)
-console.log(ContaCorrente.numeroDeContas)
+console.log(diretorLogado)
+console.log(gerenteLogado)
+console.log(clienteLogado)

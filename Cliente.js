@@ -1,11 +1,12 @@
-import { ContaCorrente } from './ContaCorrente.js';
+import { Conta } from './Conta/Conta.js';
 
 export class Cliente{
   
-  _conta;
-  constructor(nome, cpf){
+  constructor(nome, cpf, senha){
     this._nome = nome;
     this._cpf = cpf;
+    this._senha = senha;
+    this._contas = [] ;
   }
 
   get nome(){
@@ -20,13 +21,16 @@ export class Cliente{
     return this._cpf;
   }
   
-  get conta(){
-    return this._conta
+  get contas(){
+    return this._contas
   }
 
   set conta(conta){
-    if(conta instanceof ContaCorrente){
-      this._conta = conta;
+    if(conta instanceof Conta){
+      this._contas.push(conta);
     }
   }
+  autenticar(senha){
+    return this._senha == senha;
+  }  
 }
